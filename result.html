@@ -1,0 +1,26 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Busca</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div>
+        <h1>Resultados para "{{ query }}"</h1>
+        <form action="/select_articles" method="post">
+            <ul>
+                {% for article in articles %}
+                    <li>
+                        <input type="checkbox" name="articles" value="{{ article.link }}">
+                        <a href="{{ article.link }}" target="_blank">{{ article.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <button type="submit">Selecionar Artigos</button>
+        </form>
+    </div>
+</body>
+</html>
