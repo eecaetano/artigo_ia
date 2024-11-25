@@ -1,0 +1,6 @@
+# requirements.txt
+Flask==2.0.1
+requests==2.25.1
+beautifulsoup4==4.9.3
+transformers==4.3.2
+python-dotenv==0.19.2
